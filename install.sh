@@ -1,5 +1,5 @@
 echo "Creating virtual environment..."
-python -m venv ~/.autopilot/.venv
+python3.11 -m venv ~/.autopilot/.venv
 source ~/.autopilot/.venv/bin/activate
 
 # If you don't have python 3.11 installed, here's how you can install it:
@@ -10,6 +10,5 @@ source ~/.autopilot/.venv/bin/activate
 
 echo "Installing Autopilot.."
 pip3.11 install git+https://github.com/stride-nyc/stride-autopilot
-
 
 echo "Autopilot installed successfully..."
