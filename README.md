@@ -17,7 +17,7 @@ brew install python@3.11
 brew link python@3.11
 ```
 
-You should [authenticate with GitHub using a personal access token][github-access-token].
+You should [authenticate to GitHub using a personal access token][github-access-token].
 
 [github-access-token]: https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
