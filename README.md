@@ -16,6 +16,11 @@ On MacOS, you can install this version of Python using homebrew.
 brew install python@3.11
 brew link python@3.11
 ```
+
+You should [authenticate with GitHub using a personal access token][github-access-token].
+
+[github-access-token]: https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
 ## Install
 
 How to setup a client to use the autopilot CLI.
