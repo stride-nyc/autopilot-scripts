@@ -1,5 +1,5 @@
 echo "Uninstalling Autopilot..."
-pip3.11 uninstall autopilot
+pip3.11 uninstall stride-autopilot -y
 
 echo "Removing virtual environment..."
 pip3.11 cache purge
