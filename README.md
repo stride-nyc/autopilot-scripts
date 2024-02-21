@@ -34,5 +34,5 @@ How to setup a client to use the autopilot CLI.
 How to uninstall the autopilot CLI from client machine.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/un`install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/uninstall.sh)"
 ```
