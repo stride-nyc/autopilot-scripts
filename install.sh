@@ -14,7 +14,7 @@ source ~/.autopilot/.venv/bin/activate
 # brew link python@3.11
 
 
-VERSION = "@${AUTOPILOT_VERSION:-main}"
+VERSION="@${AUTOPILOT_VERSION:-main}"
 
 echo "Installing Autopilot.."
 pip3.11 install "git+https://github.com/stride-nyc/stride-autopilot$VERSION"

@@ -10,7 +10,7 @@ pip3.11 cache purge
 echo "Removing virtual environment..."
 rm -rf ~/.autopilot/.venv
 
-echo "Remove Autopilot user directory?"
+echo "Remove Autopilot user directory? (Y/N)"
 read yesorno
 if [ "$yesorno" = 'Y' ] || [ "$yesorno" = 'y' ]; then
     rm -rf ~/.autopilot/
