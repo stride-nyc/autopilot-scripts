@@ -33,7 +33,7 @@ To setup the autopilot CLI, run the below bash script.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/install.sh)"
 ```
 
-You can install a specific version by setting `AUTOPILOT_VERSION` before running the script (ex. `export AUTOPILOT_VERSION=v3.0.0`).
+You can install a specific version by setting `AUTOPILOT_VERSION` before running the script (ex. `export AUTOPILOT_VERSION=v0.3.0`).
 
 ## Running
 
