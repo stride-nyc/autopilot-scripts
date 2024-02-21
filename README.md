@@ -17,8 +17,12 @@ brew install python@3.11
 brew link python@3.11
 ```
 
-You should [authenticate to GitHub using a personal access token][github-access-token]. Your token should at least have Read Repo capabilities.
+This install script needs [an authenticated connection to github using https][github-https]. You need to either:
+- [authenticate using the GitHub CLI][github-cli],
+- OR [authenticate to GitHub using a personal access token][github-access-token]. Your token should at least have Read Repo capabilities.
 
+[github-https]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#https
+[github-cli]: https://cli.github.com/
 [github-access-token]: https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
 ## Install
