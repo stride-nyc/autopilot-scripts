@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+# Fail immediately if any errors occur
+set -e
+
 echo "Creating virtual environment..."
 python3.11 -m venv ~/.autopilot/.venv
 source ~/.autopilot/.venv/bin/activate
@@ -8,7 +13,12 @@ source ~/.autopilot/.venv/bin/activate
 # brew install python@3.11
 # brew link python@3.11
 
-echo "Installing Autopilot.."
-pip3.11 install git+https://github.com/stride-nyc/stride-autopilot
 
-echo "Autopilot installed successfully..."
+VERSION = "@${AUTOPILOT_VERSION:-main}"
+
+echo "Installing Autopilot.."
+pip3.11 install "git+https://github.com/stride-nyc/stride-autopilot${VERSION}"
+
+echo "Autopilot installed successfully. To start, run:"
+echo ""
+echo "source ~/.autopilot/.venv/bin/activate"
