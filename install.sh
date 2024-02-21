@@ -17,7 +17,7 @@ source ~/.autopilot/.venv/bin/activate
 VERSION = "@${AUTOPILOT_VERSION:-main}"
 
 echo "Installing Autopilot.."
-pip3.11 install "git+https://github.com/stride-nyc/stride-autopilot${VERSION}"
+pip3.11 install "git+https://github.com/stride-nyc/stride-autopilot$VERSION"
 
 echo "Autopilot installed successfully. To start, run:"
 echo ""
