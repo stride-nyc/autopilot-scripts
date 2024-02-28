@@ -49,11 +49,12 @@ To setup the autopilot CLI docker image, run the below bash script.
 The Autopilot install script provides a wrapper to start an autopilot docker container. Your project files will be mounted in the container to work on. Once you've attached to the docker container, you can run autopilot commands.
 
 ```bash
-AUTOPILOT_PROJECT_PATH=/absolute/path/to/my/project/code ~/autopilot/run.sh
-# inside the docker container with your project files mounted at /codedir/
-autopilot init   # create user and project configuration
-autopilot --help # see a list of autopilot commands
-autopilot main   # run autopilot interactively
+cd path/to/my-cool-project/
+~/autopilot/run.sh # run a new container with the present directory as project path
+ls                 # docker container mounts your project files at /codedir/
+autopilot init     # create user and project configuration
+autopilot --help   # see a list of autopilot commands
+autopilot main     # run autopilot interactively
 ```
 
 ### Uninstall
