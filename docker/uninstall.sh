@@ -3,12 +3,8 @@
 # Fail immediately if any errors occur
 set -e
 
-echo "Uninstalling Autopilot..."
-pip3.11 uninstall -y stride-autopilot
-pip3.11 cache purge
-
-echo "Removing virtual environment..."
-rm -rf ~/.autopilot/.venv
+echo "Uninstalling all Autopilot docker images..."
+docker rmi -f $(docker images --filter=reference="*/*/stride-autopilot:*" -q)
 
 echo "Remove Autopilot user directory? (Y/N)"
 read yesorno
