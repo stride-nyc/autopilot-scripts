@@ -50,7 +50,7 @@ The Autopilot install script provides a wrapper to start an autopilot docker con
 
 ```bash
 cd path/to/my-cool-project/
-~/autopilot/run.sh # run a new container with the present directory as project path
+~/.autopilot/run.sh # run a new container with the present directory as project path
 ls                 # docker container mounts your project files at /codedir/
 autopilot init     # create user and project configuration
 autopilot --help   # see a list of autopilot commands

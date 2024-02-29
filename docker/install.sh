@@ -29,7 +29,7 @@ mkdir -p ~/.autopilot
 cd ~/.autopilot
 echo "#!/usr/bin/env bash" > run.sh
 echo "" >> run.sh
-echo 'PROJECT_PATH=${AUTOPILOT_PROJECT_PATH:-$(cwd)}' >> run.sh
+echo 'PROJECT_PATH=${AUTOPILOT_PROJECT_PATH:-$(pwd)}' >> run.sh
 echo "docker run -ti --rm --name $DOCKER_CONTAINER -e AUTOPILOT_OPENAI_API_KEY=\$AUTOPILOT_OPEN_AI_API_KEY -v \"\$PROJECT_PATH\":/codedir -w /codedir $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION" >> run.sh
 echo "" >> run.sh
 chmod +x run.sh
