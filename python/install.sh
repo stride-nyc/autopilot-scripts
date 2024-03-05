@@ -16,10 +16,16 @@ echo "Installing Autopilot.."
 pipx install -f "git+https://github.com/stride-nyc/stride-autopilot$VERSION"
 echo ""
 
-echo "Autopilot installed successfully. To start, run:"
+echo "Autopilot pipx installed successfully."
+echo ""
+
+echo "Command autopilot now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
+echo ""
+
+echo "Start with 'autopilot init' to set up your user and project config."
 echo ""
 echo "autopilot init"
 echo ""
 
-echo "Autopilot commands can be listed with --help:"
+echo "Autopilot commands can be listed with autopilot --help."
 autopilot --help

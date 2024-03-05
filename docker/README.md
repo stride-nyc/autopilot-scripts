@@ -32,7 +32,7 @@ The install script expects the following environment variables to be set for you
 ```bash
 export AUTOPILOT_GITHUB_USER="bobby@example.com"
 export AUTOPILOT_GITHUB_TOKEN=gh_token
-export AUTOPILOT_OPEN_AI_API_KEY=oai_token
+export AUTOPILOT_OPENAI_API_KEY=oai_token
 export AUTOPILOT_VERSION=0.3.2
 ```
 
