@@ -1,6 +1,6 @@
 # Autopilot Scripts
 
-This scripts will:
+This script will:
 - **Setup prerequisite tools.** Installs tools using homebrew and asdf.
 - **Setup frontend demo and script.** Sets up a simple demo project with only frontend.
 - **Setup fullstack demo and script.** Sets up a demo project with frontend and backend.
