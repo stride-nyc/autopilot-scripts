@@ -4,7 +4,7 @@
 set -e
 
 echo "Uninstalling Conductor..."
-pipx uninstall stride-autopilot
+pipx uninstall stride-conductor
 pip3.11 cache purge
 
 echo "Remove Conductor user directory? (Y/N)"

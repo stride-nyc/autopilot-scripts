@@ -152,7 +152,7 @@ function setup_frontend_demo {
   open /Applications/Docker.app  # start docker
   echo
 
-  echo "Run autopilot init to ensure user and project config exists."
+  echo "Run conductor init to ensure user and project config exists."
   echo
 
   ~/.conductor/run.sh
@@ -210,7 +210,7 @@ function setup_fullstack_demo {
   open /Applications/Docker.app  # start docker
   echo
 
-  echo "Run autopilot init to ensure user and project config exists."
+  echo "Run conductor init to ensure user and project config exists."
   echo
 
   ~/.conductor/run.sh
@@ -226,7 +226,7 @@ function setup_env {
   if [ -x ~/.conductor/env.sh ]; then
     echo "Conductor environment script exists."
   else
-    echo "Creating autopilot environment script..."
+    echo "Creating conductor environment script..."
     mkdir -p ~/.conductor
     echo "#!/usr/bin/env bash" > ~/.conductor/env.sh
     echo "" >> ~/.conductor/env.sh
@@ -280,25 +280,25 @@ function setup_env {
 
   source ~/.conductor/env.sh
 
-  echo "Set autopilot environment variables..."
+  echo "Set conductor environment variables..."
   env | grep "CONDUCTOR"
   echo
 }
 
 
-function install_docker_autopilot {
+function install_docker_conductor {
   source ~/.conductor/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/docker/install.sh)"
 }
 
-function install_pipx_autopilot {
+function install_pipx_conductor {
   source ~/.conductor/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/python/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/python/install.sh)"
 }
 
 setup_prerequisites
 setup_frontend_demo
 setup_fullstack_demo
 setup_env
-install_docker_autopilot
-install_pipx_autopilot
+install_docker_conductor
+install_pipx_conductor

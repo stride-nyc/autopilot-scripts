@@ -6,7 +6,7 @@ These scripts will install or uninstall [Conductor] CLI as a python package.
 
 ## Python Pacakge Approach
 
-This install approach uses Python 3.11 and Pipx to install a autopilot in Python package. The autopilot CLI is available at paths from your terminal. The commands run against project that is at the current working directory of the terminal session. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
+This install approach uses Python 3.11 and Pipx to install a Conductor in Python package. The Conductor CLI is available at paths from your terminal. The commands run against project that is at the current working directory of the terminal session. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
 
 ### Prerequisites
 
@@ -56,7 +56,7 @@ To authenticate to GitHub with https, you can either:
 
 ### Install
 
-To setup the autopilot CLI, run the below bash script.
+To setup the Conductor CLI, run the below bash script.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/install.sh)"
@@ -66,13 +66,13 @@ You can install a specific version by setting `CONDUCTOR_VERSION` before running
 
 ### Running
 
-The Conductor virtual environment must be activated in order to start using the autopilot command line tool.
+The Conductor virtual environment must be activated in order to start using the Conductor command line tool.
 
 ```bash
 # inside the docker container with your project files mounted at /codedir/
-autopilot init   # create user and project configuration
-autopilot --help # see a list of autopilot commands
-autopilot main   # run autopilot interactively
+conductor init   # create user and project configuration
+conductor --help # see a list of Conductor commands
+conductor -i     # run Conductor interactively
 ```
 
 You can deactivate the virtual environment when you're done working with the tool.
@@ -83,7 +83,7 @@ deactivate
 
 ##  Uninstall
 
-To uninstall the autopilot CLI from the client machine, run the below bash script.
+To uninstall the Conductor CLI from the client machine, run the below bash script.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/uninstall.sh)"

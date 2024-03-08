@@ -46,13 +46,13 @@ cd -
 echo "Conductor docker and run script installed successfully."
 echo ""
 
-echo "Run the docker image run to make the autopilot command available. The files at your current path will be available in the container."
+echo "Run the docker image run to make the Conductor command available. The files at your current path will be available in the container."
 echo ""
 echo "cd path/to/my/project/code && ~/.conductor/run.sh"
 echo ""
 
-echo "Start with 'autopilot init' to set up your user and project config."
+echo "Start with 'conductor init' to set up your user and project config."
 echo ""
 
-echo "Conductor commands can be listed with autopilot --help."
+echo "Conductor commands can be listed with conductor --help."
 echo ""

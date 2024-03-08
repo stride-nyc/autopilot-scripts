@@ -3,7 +3,7 @@
 # Fail immediately if any errors occur
 set -e
 
-echo "Uninstalling all Autopilot docker images..."
+echo "Uninstalling all Conductor docker images..."
 docker rmi -f $(docker images --filter=reference="*/*/stride-autopilot:*" -q)
 
 echo "Remove Conductor user directory? (Y/N)"

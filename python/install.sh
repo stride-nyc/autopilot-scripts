@@ -19,13 +19,13 @@ echo ""
 echo "Conductor pipx installed successfully."
 echo ""
 
-echo "Command autopilot now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
+echo "Command conductor now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
 echo ""
 
-echo "Start with 'autopilot init' to set up your user and project config."
+echo "Start with 'conductor init' to set up your user and project config."
 echo ""
-echo "autopilot init"
+echo "conductor init"
 echo ""
 
-echo "Conductor commands can be listed with autopilot --help."
-autopilot --help
+echo "Conductor commands can be listed with conductor --help."
+conductor --help
