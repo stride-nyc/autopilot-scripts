@@ -14,7 +14,7 @@ DOCKER_HOST=ghcr.io
 DOCKER_NAMESPACE=stride-nyc
 DOCKER_IMAGE=stride-autopilot
 
-VERSION="${AUTOPILOT_VERSION:-latest}"
+VERSION="${CONDUCTOR_VERSION:-latest}"
 
 # trim v0.4.0 to 0.4.0
 # git tag starts with v - docker tag does not.
@@ -24,20 +24,20 @@ if [[ $VERSION =~ $git_tag_pattern ]]; then
 fi
 
 echo "Logging into GitHub Packages container registry.."
-echo $AUTOPILOT_GITHUB_TOKEN | docker login ghcr.io -u $AUTOPILOT_GITHUB_USER --password-stdin
+echo $CONDUCTOR_GITHUB_TOKEN | docker login ghcr.io -u $CONDUCTOR_GITHUB_USER --password-stdin
 echo ""
 
 echo "Installing Autopilot Docker Image ${VERSION}.."
 docker pull $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION
 echo ""
 
-echo "Installing ~/.autopilot/run.sh to run docker image.."
-mkdir -p ~/.autopilot
-cd ~/.autopilot
+echo "Installing ~/.conductor/run.sh to run docker image.."
+mkdir -p ~/.conductor
+cd ~/.conductor
 echo "#!/usr/bin/env bash" > run.sh
 echo "" >> run.sh
-echo 'PROJECT_PATH=${AUTOPILOT_PROJECT_PATH:-$(pwd)}' >> run.sh
-echo "docker run -ti --rm --name $DOCKER_CONTAINER -e AUTOPILOT_OPENAI_API_KEY=\$AUTOPILOT_OPENAI_API_KEY -v "$HOME/.autopilot/":/root/.autopilot -v \"\$PROJECT_PATH\":/codedir -w /codedir $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION" >> run.sh
+echo 'PROJECT_PATH=${CONDUCTOR_PROJECT_PATH:-$(pwd)}' >> run.sh
+echo "docker run -ti --rm --name $DOCKER_CONTAINER -e CONDUCTOR_OPENAI_API_KEY=\$CONDUCTOR_OPENAI_API_KEY -v "$HOME/.conductor/":/root/.conductor -v \"\$PROJECT_PATH\":/codedir -w /codedir $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION" >> run.sh
 echo "" >> run.sh
 chmod +x run.sh
 echo ""
@@ -48,7 +48,7 @@ echo ""
 
 echo "Run the docker image run to make the autopilot command available. The files at your current path will be available in the container."
 echo ""
-echo "cd path/to/my/project/code && ~/.autopilot/run.sh"
+echo "cd path/to/my/project/code && ~/.conductor/run.sh"
 echo ""
 
 echo "Start with 'autopilot init' to set up your user and project config."

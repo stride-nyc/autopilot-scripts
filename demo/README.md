@@ -22,7 +22,7 @@ After setup, the following scripts will be available.
 
 - **Start Frontend Demo** `~/Documents/CodeGen-demo/start_frontend_demo.sh`. Start frontend services and an autopilot docker container with the fullstack project as autopilot project context.
 - **Start Fullstack Demo** `~/Documents/CodeGen-demo/start_fullstack_demo.sh`. Start frontend, backend services and an autopilot docker container with the fullstack project as autopilot project context.
-- **Run autopilot** `~/.autopilot/run.sh`. Navigate to a path and run this script to start an autopilot docker container with files at that path as the autopilot project context.
+- **Run autopilot** `~/.conductor/run.sh`. Navigate to a path and run this script to start an autopilot docker container with files at that path as the autopilot project context.
 - **Autopilot** `autopilot --help`. If installed through pipx, the autopilot command should be available at any path.
 
 ## Setup Details
@@ -45,10 +45,10 @@ Setup performs the following changes to your machine:
   - **Install project dependencies.**
   - **Start script.** To start the full stack demo services and an autopilot docker image with the right context at `~/Documents/CodeGen-demo/start_fullstack_demo.sh`.
 - **Setup environment variables.** Persists these values to be re-used when running the script again.
-  - AUTOPILOT_OPENAI_API_KEY
-  - AUTOPILOT_GITHUB_USER
-  - AUTOPILOT_GITHUB_TOKEN
-  - AUTOPILOT_VERSION
+  - CONDUCTOR_OPENAI_API_KEY
+  - CONDUCTOR_GITHUB_USER
+  - CONDUCTOR_GITHUB_TOKEN
+  - CONDUCTOR_VERSION
 - **Install Autopilot Docker Image.** Pulled from our private docker image repository.
-  - **Create run script.** Wrapper to easily run a new container with the autopilot docker image correctly configured at `~/.autopilot/run.sh`.
+  - **Create run script.** Wrapper to easily run a new container with the autopilot docker image correctly configured at `~/.conductor/run.sh`.
 - **Install Autopilot Python package with Pipx.** Pulls the autopilot python package from our private git repository.

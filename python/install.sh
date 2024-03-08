@@ -10,7 +10,7 @@ set -e
 # brew link python@3.11
 # brew install pipx
 
-VERSION="@${AUTOPILOT_VERSION:-main}"
+VERSION="@${CONDUCTOR_VERSION:-main}"
 
 echo "Installing Autopilot.."
 pipx install -f "git+https://github.com/stride-nyc/stride-autopilot$VERSION"

@@ -6,10 +6,10 @@ set -e
 echo "Uninstalling all Autopilot docker images..."
 docker rmi -f $(docker images --filter=reference="*/*/stride-autopilot:*" -q)
 
-echo "Remove Autopilot user directory? (Y/N)"
+echo "Remove Conductor user directory? (Y/N)"
 read yesorno
 if [ "$yesorno" = 'Y' ] || [ "$yesorno" = 'y' ]; then
-    rm -rf ~/.autopilot/
+    rm -rf ~/.conductor/
 fi
 
-echo "Autopilot uninstalled successfully..."
+echo "Conductor uninstalled successfully..."

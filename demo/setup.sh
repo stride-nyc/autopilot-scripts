@@ -108,7 +108,7 @@ function setup_prerequisites {
 
 
 function setup_frontend_demo {
-  DEMO_HOME=${AUTOPILOT_DEMO_HOME:-~/Documents/CodeGen-demo/}
+  DEMO_HOME=${CONDUCTOR_DEMO_HOME:-~/Documents/CodeGen-demo/}
   mkdir -p $DEMO_HOME
   cd $DEMO_HOME
 
@@ -144,8 +144,8 @@ function setup_frontend_demo {
   echo "creating script $DEMO_HOME/start_frontend_demo.sh"
   #!/usr/bin/env bash
   set -e  # Fail immediately if any errors occur
-  source ~/.autopilot/env.sh  # set environment variables
-  DEMO_HOME=${AUTOPILOT_DEMO_HOME:-~/Documents/CodeGen-demo/}
+  source ~/.conductor/env.sh  # set environment variables
+  DEMO_HOME=${CONDUCTOR_DEMO_HOME:-~/Documents/CodeGen-demo/}
   cd $DEMO_HOME/demo-todo-app
   git checkout -f  # ensure the demo app is a clean slate
   npx ttab -- "npm start;"  # start demo app in a new tab
@@ -155,7 +155,7 @@ function setup_frontend_demo {
   echo "Run autopilot init to ensure user and project config exists."
   echo
 
-  ~/.autopilot/run.sh
+  ~/.conductor/run.sh
   cd -
 EOF
 
@@ -165,7 +165,7 @@ EOF
 }
 
 function setup_fullstack_demo {
-  DEMO_HOME=${AUTOPILOT_DEMO_HOME:-~/Documents/CodeGen-demo/}
+  DEMO_HOME=${CONDUCTOR_DEMO_HOME:-~/Documents/CodeGen-demo/}
   mkdir -p $DEMO_HOME
   cd $DEMO_HOME
 
@@ -201,8 +201,8 @@ function setup_fullstack_demo {
   cat <<- 'EOF' > ./start_fullstack_demo.sh
   #!/usr/bin/env bash
   set -e  # Fail immediately if any errors occur
-  source ~/.autopilot/env.sh  # set environment variables
-  DEMO_HOME=${AUTOPILOT_DEMO_HOME:-~/Documents/CodeGen-demo/}
+  source ~/.conductor/env.sh  # set environment variables
+  DEMO_HOME=${CONDUCTOR_DEMO_HOME:-~/Documents/CodeGen-demo/}
   cd $DEMO_HOME/demo-todo-fullstack
   git checkout -f  # ensure the demo app is a clean slate
   npx ttab -- "cd backend; npm start;"  # start demo backend in a new tab
@@ -213,7 +213,7 @@ function setup_fullstack_demo {
   echo "Run autopilot init to ensure user and project config exists."
   echo
 
-  ~/.autopilot/run.sh
+  ~/.conductor/run.sh
   cd -
 EOF
 
@@ -223,77 +223,77 @@ EOF
 
 
 function setup_env {
-  if [ -x ~/.autopilot/env.sh ]; then
+  if [ -x ~/.conductor/env.sh ]; then
     echo "Autopilot environment script exists."
   else
     echo "Creating autopilot environment script..."
-    mkdir -p ~/.autopilot
-    echo "#!/usr/bin/env bash" > ~/.autopilot/env.sh
-    echo "" >> ~/.autopilot/env.sh
-    chmod +x ~/.autopilot/env.sh
+    mkdir -p ~/.conductor
+    echo "#!/usr/bin/env bash" > ~/.conductor/env.sh
+    echo "" >> ~/.conductor/env.sh
+    chmod +x ~/.conductor/env.sh
   fi
 
-  source ~/.autopilot/env.sh
+  source ~/.conductor/env.sh
 
   # === SET UP OPENAI KEY ===
-  if [ -z "$AUTOPILOT_OPENAI_API_KEY" ]; then
+  if [ -z "$CONDUCTOR_OPENAI_API_KEY" ]; then
     echo "What is your OpenAI api key?"
     echo "- View & Create: https://platform.openai.com/api-keys"
 
     read apikey
-    AUTOPILOT_OPENAI_API_KEY=$apikey
+    CONDUCTOR_OPENAI_API_KEY=$apikey
 
-    echo "export AUTOPILOT_OPENAI_API_KEY=$AUTOPILOT_OPENAI_API_KEY" >> ~/.autopilot/env.sh
+    echo "export CONDUCTOR_OPENAI_API_KEY=$CONDUCTOR_OPENAI_API_KEY" >> ~/.conductor/env.sh
     echo
   fi
 
-  # === SET UP GITHUB USER FOR DOWNLOADING AUTOPILOT DOCKER IMAGE ===
-  if [ -z "$AUTOPILOT_GITHUB_USER" ]; then
+  # === SET UP GITHUB USER FOR DOWNLOADING CONDUCTOR DOCKER IMAGE ===
+  if [ -z "$CONDUCTOR_GITHUB_USER" ]; then
     echo "What is your GitHub username (email)?"
 
     read username
-    AUTOPILOT_GITHUB_USER=$username
+    CONDUCTOR_GITHUB_USER=$username
 
-    echo "export AUTOPILOT_GITHUB_USER=$AUTOPILOT_GITHUB_USER" >> ~/.autopilot/env.sh
+    echo "export CONDUCTOR_GITHUB_USER=$CONDUCTOR_GITHUB_USER" >> ~/.conductor/env.sh
     echo
   fi
 
-  # === SET UP GITHUB TOKEN FOR DOWNLOADING AUTOPILOT DOCKER IMAGE ===
-  if [ -z "$AUTOPILOT_GITHUB_TOKEN" ]; then
+  # === SET UP GITHUB TOKEN FOR DOWNLOADING CONDUCTOR DOCKER IMAGE ===
+  if [ -z "$CONDUCTOR_GITHUB_TOKEN" ]; then
     echo "What is your GitHub personal access token?"
     echo "- View: https://github.com/settings/tokens"
     echo "- Create new: https://github.com/settings/tokens/new"
 
     read token
-    AUTOPILOT_GITHUB_TOKEN=$token
+    CONDUCTOR_GITHUB_TOKEN=$token
 
-    echo "export AUTOPILOT_GITHUB_TOKEN=$AUTOPILOT_GITHUB_TOKEN" >> ~/.autopilot/env.sh
+    echo "export CONDUCTOR_GITHUB_TOKEN=$CONDUCTOR_GITHUB_TOKEN" >> ~/.conductor/env.sh
     echo
   fi
 
-  if [ -z "$AUTOPILOT_VERSION" ]; then
-    echo "Setting AUTOPILOT_VERSION=${AUTOPILOT_VERSION}..."
-    AUTOPILOT_VERSION="v0.4.0"
-    echo "export AUTOPILOT_VERSION=$AUTOPILOT_VERSION" >> ~/.autopilot/env.sh
+  if [ -z "$CONDUCTOR_VERSION" ]; then
+    echo "Setting CONDUCTOR_VERSION=${CONDUCTOR_VERSION}..."
+    CONDUCTOR_VERSION="v0.4.0"
+    echo "export CONDUCTOR_VERSION=$CONDUCTOR_VERSION" >> ~/.conductor/env.sh
     echo
   fi
 
-  source ~/.autopilot/env.sh
+  source ~/.conductor/env.sh
 
-  echo "Set autopilot envronment variables..."
-  env | grep "AUTOPILOT"
+  echo "Set autopilot environment variables..."
+  env | grep "CONDUCTOR"
   echo
 }
 
 
 function install_docker_autopilot {
-  source ~/.autopilot/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/install.sh)"
+  source ~/.conductor/env.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
 }
 
 function install_pipx_autopilot {
-  source ~/.autopilot/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/install.sh)"
+  source ~/.conductor/env.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/python/install.sh)"
 }
 
 setup_prerequisites

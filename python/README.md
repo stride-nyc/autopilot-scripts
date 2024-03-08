@@ -62,7 +62,7 @@ To setup the autopilot CLI, run the below bash script.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/install.sh)"
 ```
 
-You can install a specific version by setting `AUTOPILOT_VERSION` before running the script (ex. `export AUTOPILOT_VERSION=v0.3.2`).
+You can install a specific version by setting `CONDUCTOR_VERSION` before running the script (ex. `export CONDUCTOR_VERSION=v0.3.2`).
 
 ### Running
 

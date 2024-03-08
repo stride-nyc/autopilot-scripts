@@ -30,11 +30,10 @@ open /Applications/Docker.app
 The install script expects the following environment variables to be set for your shell (you may have been provided these by a member of the team).
 
 ```bash
-export AUTOPILOT_GITHUB_USER="bobby@example.com"
-export AUTOPILOT_GITHUB_TOKEN=gh_token
-export AUTOPILOT_OPENAI_API_KEY=oai_token
-export AUTOPILOT_VERSION=0.3.2
-export AUTOPILOT_SCRIPTS_VERSION=v0.4.0
+export CONDUCTOR_GITHUB_USER="bobby@example.com"
+export CONDUCTOR_GITHUB_TOKEN=gh_token
+export CONDUCTOR_OPENAI_API_KEY=oai_token
+export CONDUCTOR_VERSION=0.3.2
 ```
 
 ### Install
@@ -42,7 +41,7 @@ export AUTOPILOT_SCRIPTS_VERSION=v0.4.0
 To setup the autopilot CLI docker image, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
 ```
 
 ### Running
@@ -51,7 +50,7 @@ The Autopilot install script provides a wrapper to start an autopilot docker con
 
 ```bash
 cd path/to/my-cool-project/
-~/.autopilot/run.sh # run a new container with the present directory as project path
+~/.conductor/run.sh # run a new container with the present directory as project path
 ls                 # docker container mounts your project files at /codedir/
 autopilot init     # create user and project configuration
 autopilot --help   # see a list of autopilot commands
@@ -63,5 +62,5 @@ autopilot main     # run autopilot interactively
 To uninstall all autopilot CLI docker images from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/uninstall.sh)"
 ```
