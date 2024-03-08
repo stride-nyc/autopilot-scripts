@@ -9,10 +9,10 @@ set -e
 # brew install --cask docker
 # open /Applications/Docker.app
 
-DOCKER_CONTAINER=autopilot
+DOCKER_CONTAINER=conductor
 DOCKER_HOST=ghcr.io
 DOCKER_NAMESPACE=stride-nyc
-DOCKER_IMAGE=stride-autopilot
+DOCKER_IMAGE=conductor
 
 VERSION="${CONDUCTOR_VERSION:-latest}"
 

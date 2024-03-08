@@ -2,7 +2,7 @@
 
 This repo provides two approaches to quickly install and uninstall the [Conductor] CLI on any machine.
 
-[Conductor]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/conductor
 
 ## Install Approaches
 

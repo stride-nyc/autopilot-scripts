@@ -4,7 +4,7 @@
 set -e
 
 echo "Uninstalling all Conductor docker images..."
-docker rmi -f $(docker images --filter=reference="*/*/stride-autopilot:*" -q)
+docker rmi -f $(docker images --filter=reference="*/*/conductor:*" -q)
 
 echo "Remove Conductor user directory? (Y/N)"
 read yesorno

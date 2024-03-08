@@ -2,7 +2,7 @@
 
 These scripts will install or uninstall [Conductor] CLI as a Docker image with a wrapper script to run it inside a container.
 
-[Conductor]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/conductor
 
 ## Docker Approach
 
