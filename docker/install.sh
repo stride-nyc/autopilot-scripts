@@ -27,7 +27,7 @@ echo "Logging into GitHub Packages container registry.."
 echo $CONDUCTOR_GITHUB_TOKEN | docker login ghcr.io -u $CONDUCTOR_GITHUB_USER --password-stdin
 echo ""
 
-echo "Installing Autopilot Docker Image ${VERSION}.."
+echo "Installing Conductor Docker Image ${VERSION}.."
 docker pull $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION
 echo ""
 
@@ -43,7 +43,7 @@ chmod +x run.sh
 echo ""
 cd -
 
-echo "Autopilot docker and run script installed successfully."
+echo "Conductor docker and run script installed successfully."
 echo ""
 
 echo "Run the docker image run to make the autopilot command available. The files at your current path will be available in the container."
@@ -54,5 +54,5 @@ echo ""
 echo "Start with 'autopilot init' to set up your user and project config."
 echo ""
 
-echo "Autopilot commands can be listed with autopilot --help."
+echo "Conductor commands can be listed with autopilot --help."
 echo ""

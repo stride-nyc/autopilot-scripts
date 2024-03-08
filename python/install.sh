@@ -12,11 +12,11 @@ set -e
 
 VERSION="@${CONDUCTOR_VERSION:-main}"
 
-echo "Installing Autopilot.."
+echo "Installing Conductor.."
 pipx install -f "git+https://github.com/stride-nyc/stride-autopilot$VERSION"
 echo ""
 
-echo "Autopilot pipx installed successfully."
+echo "Conductor pipx installed successfully."
 echo ""
 
 echo "Command autopilot now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
@@ -27,5 +27,5 @@ echo ""
 echo "autopilot init"
 echo ""
 
-echo "Autopilot commands can be listed with autopilot --help."
+echo "Conductor commands can be listed with autopilot --help."
 autopilot --help

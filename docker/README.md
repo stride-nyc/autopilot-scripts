@@ -1,8 +1,8 @@
-# Autopilot Scripts
+# Conductor Scripts
 
-These scripts will install or uninstall [Autopilot] CLI as a Docker image with a wrapper script to run it inside a container.
+These scripts will install or uninstall [Conductor] CLI as a Docker image with a wrapper script to run it inside a container.
 
-[Autopilot]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/stride-autopilot
 
 ## Docker Approach
 
@@ -46,7 +46,7 @@ To setup the autopilot CLI docker image, run the below bash script.
 
 ### Running
 
-The Autopilot install script provides a wrapper to start an autopilot docker container. Your project files will be mounted in the container to work on. Once you've attached to the docker container, you can run autopilot commands.
+The Conductor install script provides a wrapper to start an autopilot docker container. Your project files will be mounted in the container to work on. Once you've attached to the docker container, you can run autopilot commands.
 
 ```bash
 cd path/to/my-cool-project/

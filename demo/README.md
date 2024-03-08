@@ -1,12 +1,12 @@
-# Autopilot Scripts
+# Conductor Scripts
 
 This script will:
 - **Setup prerequisite tools.** Installs tools using homebrew and asdf.
 - **Setup frontend demo and script.** Sets up a simple demo project with only frontend.
 - **Setup fullstack demo and script.** Sets up a demo project with frontend and backend.
 - **Setup environment variables.** Persists these values to be re-used when running the script again.
-- **Install Autopilot Docker Image and script.** Pulled from our private docker image repository.
-- **Install Autopilot Python package with Pipx.** Pulls the autopilot python package from our private git repository.
+- **Install Conductor Docker Image and script.** Pulled from our private docker image repository.
+- **Install Conductor Python package with Pipx.** Pulls the autopilot python package from our private git repository.
 
 ### Setup
 
@@ -23,7 +23,7 @@ After setup, the following scripts will be available.
 - **Start Frontend Demo** `~/Documents/CodeGen-demo/start_frontend_demo.sh`. Start frontend services and an autopilot docker container with the fullstack project as autopilot project context.
 - **Start Fullstack Demo** `~/Documents/CodeGen-demo/start_fullstack_demo.sh`. Start frontend, backend services and an autopilot docker container with the fullstack project as autopilot project context.
 - **Run autopilot** `~/.conductor/run.sh`. Navigate to a path and run this script to start an autopilot docker container with files at that path as the autopilot project context.
-- **Autopilot** `autopilot --help`. If installed through pipx, the autopilot command should be available at any path.
+- **Conductor** `autopilot --help`. If installed through pipx, the autopilot command should be available at any path.
 
 ## Setup Details
 
@@ -49,6 +49,6 @@ Setup performs the following changes to your machine:
   - CONDUCTOR_GITHUB_USER
   - CONDUCTOR_GITHUB_TOKEN
   - CONDUCTOR_VERSION
-- **Install Autopilot Docker Image.** Pulled from our private docker image repository.
+- **Install Conductor Docker Image.** Pulled from our private docker image repository.
   - **Create run script.** Wrapper to easily run a new container with the autopilot docker image correctly configured at `~/.conductor/run.sh`.
-- **Install Autopilot Python package with Pipx.** Pulls the autopilot python package from our private git repository.
+- **Install Conductor Python package with Pipx.** Pulls the autopilot python package from our private git repository.

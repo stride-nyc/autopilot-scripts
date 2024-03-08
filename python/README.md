@@ -1,8 +1,8 @@
-# Autopilot Scripts
+# Conductor Scripts
 
-These scripts will install or uninstall [Autopilot] CLI as a python package.
+These scripts will install or uninstall [Conductor] CLI as a python package.
 
-[Autopilot]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/stride-autopilot
 
 ## Python Pacakge Approach
 
@@ -66,7 +66,7 @@ You can install a specific version by setting `CONDUCTOR_VERSION` before running
 
 ### Running
 
-The Autopilot virtual environment must be activated in order to start using the autopilot command line tool.
+The Conductor virtual environment must be activated in order to start using the autopilot command line tool.
 
 ```bash
 # inside the docker container with your project files mounted at /codedir/

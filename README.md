@@ -1,8 +1,8 @@
-# Autopilot Scripts
+# Conductor Scripts
 
-This repo provides two approaches to quickly install and uninstall the [Autopilot] CLI on any machine.
+This repo provides two approaches to quickly install and uninstall the [Conductor] CLI on any machine.
 
-[Autopilot]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/stride-autopilot
 
 ## Install Approaches
 

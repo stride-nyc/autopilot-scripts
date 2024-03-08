@@ -224,7 +224,7 @@ EOF
 
 function setup_env {
   if [ -x ~/.conductor/env.sh ]; then
-    echo "Autopilot environment script exists."
+    echo "Conductor environment script exists."
   else
     echo "Creating autopilot environment script..."
     mkdir -p ~/.conductor
