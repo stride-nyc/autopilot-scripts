@@ -273,7 +273,7 @@ function setup_env {
 
   if [ -z "$CONDUCTOR_VERSION" ]; then
     echo "Setting CONDUCTOR_VERSION=${CONDUCTOR_VERSION}..."
-    CONDUCTOR_VERSION="v0.4.0"
+    CONDUCTOR_VERSION="v0.4.1"
     echo "export CONDUCTOR_VERSION=$CONDUCTOR_VERSION" >> ~/.conductor/env.sh
     echo
   fi
