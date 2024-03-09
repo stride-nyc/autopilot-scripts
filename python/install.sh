@@ -24,8 +24,6 @@ echo ""
 
 echo "Start with 'conductor init' to set up your user and project config."
 echo ""
-echo "conductor init"
-echo ""
 
-echo "Conductor commands can be listed with conductor --help."
+echo "Conductor commands can be listed with 'conductor --help.'"
 conductor --help

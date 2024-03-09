@@ -33,7 +33,8 @@ The install script expects the following environment variables to be set for you
 export CONDUCTOR_GITHUB_USER="bobby@example.com"
 export CONDUCTOR_GITHUB_TOKEN=gh_token
 export CONDUCTOR_OPENAI_API_KEY=oai_token
-export CONDUCTOR_VERSION=0.3.2
+export CONDUCTOR_VERSION=0.4.1
+export CONDUCTOR_SCRIPTS_VERSION=main
 ```
 
 ### Install
@@ -41,7 +42,7 @@ export CONDUCTOR_VERSION=0.3.2
 To setup the Conductor CLI docker image, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/install.sh)"
 ```
 
 ### Running
@@ -62,5 +63,5 @@ conductor -i       # run conductor interactively
 To uninstall all Conductor CLI docker images from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
 ```
