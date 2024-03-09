@@ -42,7 +42,7 @@ export CONDUCTOR_SCRIPTS_VERSION=main
 To setup the Conductor CLI docker image, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/install.sh)"
 ```
 
 ### Running
@@ -52,10 +52,10 @@ The Conductor install script provides a wrapper to start an Conductor docker con
 ```bash
 cd path/to/my-cool-project/
 ~/.conductor/run.sh # run a new container with the present directory as project path
-ls                 # docker container mounts your project files at /codedir/
-conductor init     # create user and project configuration
-conductor --help   # see a list of conductor commands
-conductor -i       # run conductor interactively
+ls                  # docker container mounts your project files at /codedir/
+conductor init      # create user and project configuration
+conductor --help    # see a list of conductor commands
+conductor -i        # run conductor interactively
 ```
 
 ### Uninstall
@@ -63,5 +63,5 @@ conductor -i       # run conductor interactively
 To uninstall all Conductor CLI docker images from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
 ```

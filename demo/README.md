@@ -13,7 +13,7 @@ This script will:
 Run the below bash script to perform setup.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/demo/setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/demo/setup.sh)"
 ```
 
 ## Scripts
