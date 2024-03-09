@@ -23,12 +23,13 @@ if [[ $VERSION =~ $git_tag_pattern ]]; then
     VERSION=${VERSION:1}
 fi
 
-echo "Logging into GitHub Packages container registry.."
+echo "Logging into GitHub Packages container registry with user $CONDUCTOR_GITHUB_USER.."
 echo $CONDUCTOR_GITHUB_TOKEN | docker login ghcr.io -u $CONDUCTOR_GITHUB_USER --password-stdin
 echo ""
 
-echo "Installing Conductor Docker Image ${VERSION}.."
-docker pull $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION
+IMAGE="$DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION"
+echo "Installing Conductor Docker Image ${IMAGE}.."
+docker pull $IMAGE
 echo ""
 
 echo "Installing ~/.conductor/run.sh to run docker image.."
@@ -54,5 +55,5 @@ echo ""
 echo "Start with 'conductor init' to set up your user and project config."
 echo ""
 
-echo "Conductor commands can be listed with conductor --help."
+echo "Conductor commands can be listed with 'conductor --help.'"
 echo ""

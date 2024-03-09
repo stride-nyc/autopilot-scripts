@@ -288,12 +288,12 @@ function setup_env {
 
 function install_docker_conductor {
   source ~/.conductor/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/docker/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/install.sh)"
 }
 
 function install_pipx_conductor {
   source ~/.conductor/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/python/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/python/install.sh)"
 }
 
 setup_prerequisites
