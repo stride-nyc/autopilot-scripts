@@ -13,7 +13,7 @@ set -e
 VERSION="@${CONDUCTOR_VERSION:-main}"
 
 echo "Installing Conductor.."
-pipx install -f "git+https://github.com/stride-nyc/stride-autopilot$VERSION"
+pipx install -f "git+https://github.com/stride-nyc/conductor$VERSION"
 echo ""
 
 echo "Conductor pipx installed successfully."
