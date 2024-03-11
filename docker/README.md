@@ -1,18 +1,18 @@
-# Autopilot Scripts
+# Conductor Scripts
 
-These scripts will install or uninstall [Autopilot] CLI as a Docker image with a wrapper script to run it inside a container.
+These scripts will install or uninstall [Conductor] CLI as a Docker image with a wrapper script to run it inside a container.
 
-[Autopilot]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/conductor
 
 ## Docker Approach
 
-This install approach uses Docker to download a docker image containing autopilot CLI and its dependencies. It runs autopilot in a container and mounts a project folder with code from your laptop. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
+This install approach uses Docker to download a docker image containing Conductor CLI and its dependencies. It runs Conductor in a container and mounts a project folder with code from your laptop. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
 
 ### Prerequisites
 
 #### Docker
 
-This method for running autopilot requires Docker. On Mac, Docker can be installed using Homebrew.
+This method for running Conductor requires Docker. On Mac, Docker can be installed using Homebrew.
 
 ```bash
 # Install Brew
@@ -30,38 +30,38 @@ open /Applications/Docker.app
 The install script expects the following environment variables to be set for your shell (you may have been provided these by a member of the team).
 
 ```bash
-export AUTOPILOT_GITHUB_USER="bobby@example.com"
-export AUTOPILOT_GITHUB_TOKEN=gh_token
-export AUTOPILOT_OPENAI_API_KEY=oai_token
-export AUTOPILOT_VERSION=0.3.2
-export AUTOPILOT_SCRIPTS_VERSION=v0.4.0
+export CONDUCTOR_GITHUB_USER="bobby@example.com"
+export CONDUCTOR_GITHUB_TOKEN=gh_token
+export CONDUCTOR_OPENAI_API_KEY=oai_token
+export CONDUCTOR_VERSION=0.4.1
+export CONDUCTOR_SCRIPTS_VERSION=main
 ```
 
 ### Install
 
-To setup the autopilot CLI docker image, run the below bash script.
+To setup the Conductor CLI docker image, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/install.sh)"
 ```
 
 ### Running
 
-The Autopilot install script provides a wrapper to start an autopilot docker container. Your project files will be mounted in the container to work on. Once you've attached to the docker container, you can run autopilot commands.
+The Conductor install script provides a wrapper to start an Conductor docker container. Your project files will be mounted in the container to work on. Once you've attached to the docker container, you can run Conductor commands.
 
 ```bash
 cd path/to/my-cool-project/
-~/.autopilot/run.sh # run a new container with the present directory as project path
-ls                 # docker container mounts your project files at /codedir/
-autopilot init     # create user and project configuration
-autopilot --help   # see a list of autopilot commands
-autopilot main     # run autopilot interactively
+~/.conductor/run.sh # run a new container with the present directory as project path
+ls                  # docker container mounts your project files at /codedir/
+conductor init      # create user and project configuration
+conductor --help    # see a list of conductor commands
+conductor -i        # run conductor interactively
 ```
 
 ### Uninstall
 
-To uninstall all autopilot CLI docker images from the client machine, run the below bash script.
+To uninstall all Conductor CLI docker images from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
 ```

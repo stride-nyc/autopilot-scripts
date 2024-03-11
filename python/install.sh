@@ -10,22 +10,20 @@ set -e
 # brew link python@3.11
 # brew install pipx
 
-VERSION="@${AUTOPILOT_VERSION:-main}"
+VERSION="@${CONDUCTOR_VERSION:-main}"
 
-echo "Installing Autopilot.."
-pipx install -f "git+https://github.com/stride-nyc/stride-autopilot$VERSION"
+echo "Installing Conductor.."
+pipx install -f "git+https://github.com/stride-nyc/conductor$VERSION"
 echo ""
 
-echo "Autopilot pipx installed successfully."
+echo "Conductor pipx installed successfully."
 echo ""
 
-echo "Command autopilot now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
+echo "Command conductor now accessible from any path in the console. The files at your current path will be used as a basis for the active project."
 echo ""
 
-echo "Start with 'autopilot init' to set up your user and project config."
-echo ""
-echo "autopilot init"
+echo "Start with 'conductor init' to set up your user and project config."
 echo ""
 
-echo "Autopilot commands can be listed with autopilot --help."
-autopilot --help
+echo "Conductor commands can be listed with 'conductor --help.'"
+conductor --help

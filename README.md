@@ -1,20 +1,20 @@
-# Autopilot Scripts
+# Conductor Scripts
 
-This repo provides two approaches to quickly install and uninstall the [Autopilot] CLI on any machine.
+This repo provides two approaches to quickly install and uninstall the [Conductor] CLI on any machine.
 
-[Autopilot]: https://github.com/stride-nyc/stride-autopilot
+[Conductor]: https://github.com/stride-nyc/conductor
 
 ## Install Approaches
 
 ### Docker
 
-This install approach uses Docker to download a docker image containing autopilot CLI and its dependencies. It runs autopilot in a container and mounts a project folder with code from your laptop. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
+This install approach uses Docker to download a docker image containing Conductor CLI and its dependencies. It runs Conductor in a container and mounts a project folder with code from your laptop. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
 
 See [Docker README][docker/README.md].
 
 ### Python Package
 
-This install approach uses Python 3.11 and Pipx to install a autopilot in Python package. The autopilot CLI is available at paths from your terminal. The commands run against project that is at the current working directory of the terminal session. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
+This install approach uses Python 3.11 and Pipx to install Conductor in Python package. The Conductor CLI is available at paths from your terminal. The commands run against project that is at the current working directory of the terminal session. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
 
 See [Python README][python/README.md].
 
