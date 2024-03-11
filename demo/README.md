@@ -6,14 +6,14 @@ This script will:
 - **Setup fullstack demo and script.** Sets up a demo project with frontend and backend.
 - **Setup environment variables.** Persists these values to be re-used when running the script again.
 - **Install Conductor Docker Image and script.** Pulled from our private docker image repository.
-- **Install Conductor Python package with Pipx.** Pulls the Cutopilot python package from our private git repository.
+- **Install Conductor Python package with Pipx.** Pulls the Conductor python package from our private git repository.
 
 ### Setup
 
 Run the below bash script to perform setup.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/main/demo/setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/conductor-scripts/${CONDUCTOR_SCRIPTS_VERSION:-main}/demo/setup.sh)"
 ```
 
 ## Scripts
@@ -51,4 +51,4 @@ Setup performs the following changes to your machine:
   - CONDUCTOR_VERSION
 - **Install Conductor Docker Image.** Pulled from our private docker image repository.
   - **Create run script.** Wrapper to easily run a new container with the Conductor docker image correctly configured at `~/.conductor/run.sh`.
-- **Install Conductor Python package with Pipx.** Pulls the Condcutor python package from our private git repository.
+- **Install Conductor Python package with Pipx.** Pulls the Conductor python package from our private git repository.
