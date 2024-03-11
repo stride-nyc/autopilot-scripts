@@ -45,7 +45,7 @@ function setup_prerequisites {
   else
       echo "Installing docker"
       brew install --cask docker
-      
+
   fi
   open /Applications/Docker.app  # start docker
   echo
@@ -288,12 +288,12 @@ function setup_env {
 
 function install_docker_autopilot {
   source ~/.autopilot/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/install.sh)"
 }
 
 function install_pipx_autopilot {
   source ~/.autopilot/env.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/python/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/install.sh)"
 }
 
 setup_prerequisites

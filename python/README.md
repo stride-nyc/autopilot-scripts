@@ -4,7 +4,7 @@ These scripts will install or uninstall [Autopilot] CLI as a python package.
 
 [Autopilot]: https://github.com/stride-nyc/stride-autopilot
 
-## Python Pacakge Apporach
+## Python Pacakge Approach
 
 This install approach uses Python 3.11 and Pipx to install a autopilot in Python package. The autopilot CLI is available at paths from your terminal. The commands run against project that is at the current working directory of the terminal session. It requires a GitHub User and Token for the Stride-NYC organization and an Open AI API Key.
 
@@ -59,7 +59,7 @@ To authenticate to GitHub with https, you can either:
 To setup the autopilot CLI, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/python/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/install.sh)"
 ```
 
 You can install a specific version by setting `AUTOPILOT_VERSION` before running the script (ex. `export AUTOPILOT_VERSION=v0.3.2`).
@@ -86,5 +86,5 @@ deactivate
 To uninstall the autopilot CLI from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/python/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/python/uninstall.sh)"
 ```

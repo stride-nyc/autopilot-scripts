@@ -34,6 +34,7 @@ export AUTOPILOT_GITHUB_USER="bobby@example.com"
 export AUTOPILOT_GITHUB_TOKEN=gh_token
 export AUTOPILOT_OPENAI_API_KEY=oai_token
 export AUTOPILOT_VERSION=0.3.2
+export AUTOPILOT_SCRIPTS_VERSION=v0.4.0
 ```
 
 ### Install
@@ -41,7 +42,7 @@ export AUTOPILOT_VERSION=0.3.2
 To setup the autopilot CLI docker image, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/install.sh)"
 ```
 
 ### Running
@@ -62,5 +63,5 @@ autopilot main     # run autopilot interactively
 To uninstall all autopilot CLI docker images from the client machine, run the below bash script.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/main/docker/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/stride-nyc/autopilot-scripts/${AUTOPILOT_SCRIPTS_VERSION:-main}/docker/uninstall.sh)"
 ```
