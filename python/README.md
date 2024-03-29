@@ -48,7 +48,7 @@ The install script expects the following environment variables to be set for you
 export CONDUCTOR_GITHUB_USER="bobby@example.com"
 export CONDUCTOR_GITHUB_TOKEN=gh_token
 export CONDUCTOR_OPENAI_API_KEY=oai_token
-export CONDUCTOR_VERSION=0.4.1
+export CONDUCTOR_VERSION=0.4.2
 export CONDUCTOR_SCRIPTS_VERSION=main
 ```
 
@@ -57,6 +57,7 @@ export CONDUCTOR_SCRIPTS_VERSION=main
 Installing Conductor by Python Package needs [an authenticated connection to GitHub using https][github-https]. The GitHub User should be part of the Stride-NYC GitHub organization.
 
 To authenticate to GitHub with https, you can either:
+
 - [Authenticate using the GitHub CLI.][github-cli]. This will prompt you in a browser window for 2FA login via GitHub.com.
 - OR [Authenticate using a GitHub personal access token.][github-access-token] Your token should at least have Repo capabilities ([view/edit token permissions], [create new token]). When prompted for git user and password, use your GitHub Username and the GitHub personal access token as password.
 
@@ -87,7 +88,7 @@ conductor --help # see a list of Conductor commands
 conductor -i     # run Conductor interactively
 ```
 
-##  Uninstall
+## Uninstall
 
 To uninstall the Conductor CLI from the client machine, run the below bash script.
 
