@@ -111,7 +111,7 @@ function setup_frontend_demo {
   mkdir -p $DEMO_HOME
   cd $DEMO_HOME
 
-  # === SET UP DEMO FRONTENED APP ===
+  # === SET UP DEMO FRONTEND APP ===
   DEMO_FRONTEND_APP_VERSION=v1.0.0
   if [ -d ./demo-todo-app ]; then
     echo "Directory exists: demo-todo-app"
