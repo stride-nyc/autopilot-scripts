@@ -35,11 +35,11 @@ echo ""
 echo "Installing ~/.conductor/run.sh to run docker image.."
 mkdir -p ~/.conductor
 cd ~/.conductor
-echo "#!/usr/bin/env bash" > run.sh
-echo "" >> run.sh
-echo 'PROJECT_PATH=${CONDUCTOR_PROJECT_PATH:-$(pwd)}' >> run.sh
-echo "docker run -ti --rm --name $DOCKER_CONTAINER -e CONDUCTOR_OPENAI_API_KEY=\$CONDUCTOR_OPENAI_API_KEY -v "$HOME/.conductor/":/root/.conductor -v \"\$PROJECT_PATH\":/codedir -w /codedir $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION" >> run.sh
-echo "" >> run.sh
+echo "#!/usr/bin/env bash" >run.sh
+echo "" >>run.sh
+echo 'PROJECT_PATH=${CONDUCTOR_PROJECT_PATH:-$(pwd)}' >>run.sh
+echo "docker run -ti --rm --name $DOCKER_CONTAINER -e CONDUCTOR_OPENAI_API_KEY=\$CONDUCTOR_OPENAI_API_KEY -v "$HOME/.conductor/":/root/.conductor -v \"\$PROJECT_PATH\":/codedir -w /codedir $DOCKER_HOST/$DOCKER_NAMESPACE/$DOCKER_IMAGE:$VERSION" >>run.sh
+echo "" >>run.sh
 chmod +x run.sh
 echo ""
 cd -

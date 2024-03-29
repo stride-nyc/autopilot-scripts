@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-set -e  # Fail immediately if any errors occur
+set -e # Fail immediately if any errors occur
 
 function setup_prerequisites {
   echo "Caching password..."
   sudo -K
-  sudo true;
+  sudo true
   clear
 
   # === INSTALL HOMEBREW ===
@@ -15,11 +15,11 @@ function setup_prerequisites {
     yes '' | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     if which brew; then
-        echo "Homebrew install verified"
+      echo "Homebrew install verified"
     else
-        echo "Adding Homebrew to your PATH"
-        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-        eval "$(/opt/homebrew/bin/brew shellenv)"
+      echo "Adding Homebrew to your PATH"
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
   fi
   echo
@@ -41,13 +41,13 @@ function setup_prerequisites {
 
   # === INSTALL DOCKER ===
   if [ -x "$(command -v docker)" ]; then
-      echo "Docker is installed!"
+    echo "Docker is installed!"
   else
-      echo "Installing docker"
-      brew install --cask docker
+    echo "Installing docker"
+    brew install --cask docker
 
   fi
-  open /Applications/Docker.app  # start docker
+  open /Applications/Docker.app # start docker
   echo
 
   echo "installing prerequisites for python-build"
@@ -67,16 +67,16 @@ function setup_prerequisites {
     brew install asdf
     echo $SHELL
     case $(echo $SHELL) in
-      "/bin/zsh")
-        echo "setting up zsh"
-        echo -e "\n\n# asdf" >> ~/.zshrc
-        echo -e ". $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.zshrc
-        ;;
-      "/bin/bash")
-        echo "setting up bash"
-        echo -e "\n\n# asdf" >> ~/.bashrc
-        echo -e ". \"$(brew --prefix asdf)/libexec/asdf.sh\"" >> ~/.bashrc
-        ;;
+    "/bin/zsh")
+      echo "setting up zsh"
+      echo -e "\n\n# asdf" >>~/.zshrc
+      echo -e ". $(brew --prefix asdf)/libexec/asdf.sh" >>~/.zshrc
+      ;;
+    "/bin/bash")
+      echo "setting up bash"
+      echo -e "\n\n# asdf" >>~/.bashrc
+      echo -e ". \"$(brew --prefix asdf)/libexec/asdf.sh\"" >>~/.bashrc
+      ;;
     esac
     source "$(brew --prefix asdf)/libexec/asdf.sh"
   fi
@@ -106,7 +106,6 @@ function setup_prerequisites {
   npx --yes ttab --help
 }
 
-
 function setup_frontend_demo {
   DEMO_HOME=${CONDUCTOR_DEMO_HOME:-~/Documents/CodeGen-demo/}
   mkdir -p $DEMO_HOME
@@ -126,21 +125,32 @@ function setup_frontend_demo {
   echo
 
   echo "Setting up demo-todo-app dependencies..."
-  (cd ./demo-todo-app; npm install)
+  (
+    cd ./demo-todo-app
+    npm install
+  )
   echo
 
   # create demo-todo-app clean slate in git
-  if [[ $(cd ./demo-todo-app; git log) ]]; then
+  if [[ $(
+    cd ./demo-todo-app
+    git log
+  ) ]]; then
     echo "Git is already set up!"
   else
     echo "Initializing project with git."
-    (cd ./demo-todo-app; git init; git add .; git commit -m "initial commit, HOOTY HOOT!")
+    (
+      cd ./demo-todo-app
+      git init
+      git add .
+      git commit -m "initial commit, HOOTY HOOT!"
+    )
   fi
   echo
 
   # === SET UP FRONTEND DEMO SCRIPT ===
   echo "creating script ${DEMO_HOME}start_frontend_demo.sh"
-  cat <<- 'EOF' > ./start_frontend_demo.sh
+  cat <<-'EOF' >./start_frontend_demo.sh
   echo "creating script $DEMO_HOME/start_frontend_demo.sh"
   #!/usr/bin/env bash
   set -e  # Fail immediately if any errors occur
@@ -183,22 +193,36 @@ function setup_fullstack_demo {
   echo
 
   echo "Setting up demo-todo-fullstack dependencies..."
-  (cd ./demo-todo-fullstack/frontend; npm install)
-  (cd ./demo-todo-fullstack/backend; npm install)
+  (
+    cd ./demo-todo-fullstack/frontend
+    npm install
+  )
+  (
+    cd ./demo-todo-fullstack/backend
+    npm install
+  )
   echo
 
   # create demo-todo-fullstack clean slate in git
-  if [[ $(cd ./demo-todo-fullstack; git log) ]]; then
+  if [[ $(
+    cd ./demo-todo-fullstack
+    git log
+  ) ]]; then
     echo "Git is already set up!"
   else
     echo "Initializing project with git."
-    (cd ./demo-todo-fullstack; git init; git add .; git commit -m "initial commit, HOOTY HOOT!")
+    (
+      cd ./demo-todo-fullstack
+      git init
+      git add .
+      git commit -m "initial commit, HOOTY HOOT!"
+    )
   fi
   echo
 
   # === SET UP FULLSTACK DEMO SCRIPT ===
   echo "creating script ${DEMO_HOME}start_fullstack_demo.sh"
-  cat <<- 'EOF' > ./start_fullstack_demo.sh
+  cat <<-'EOF' >./start_fullstack_demo.sh
   #!/usr/bin/env bash
   set -e  # Fail immediately if any errors occur
   source ~/.conductor/env.sh  # set environment variables
@@ -221,15 +245,14 @@ EOF
   cd -
 }
 
-
 function setup_env {
   if [ -x ~/.conductor/env.sh ]; then
     echo "Conductor environment script exists."
   else
     echo "Creating conductor environment script..."
     mkdir -p ~/.conductor
-    echo "#!/usr/bin/env bash" > ~/.conductor/env.sh
-    echo "" >> ~/.conductor/env.sh
+    echo "#!/usr/bin/env bash" >~/.conductor/env.sh
+    echo "" >>~/.conductor/env.sh
     chmod +x ~/.conductor/env.sh
   fi
 
@@ -243,7 +266,7 @@ function setup_env {
     read apikey
     CONDUCTOR_OPENAI_API_KEY=$apikey
 
-    echo "export CONDUCTOR_OPENAI_API_KEY=$CONDUCTOR_OPENAI_API_KEY" >> ~/.conductor/env.sh
+    echo "export CONDUCTOR_OPENAI_API_KEY=$CONDUCTOR_OPENAI_API_KEY" >>~/.conductor/env.sh
     echo
   fi
 
@@ -254,7 +277,7 @@ function setup_env {
     read username
     CONDUCTOR_GITHUB_USER=$username
 
-    echo "export CONDUCTOR_GITHUB_USER=$CONDUCTOR_GITHUB_USER" >> ~/.conductor/env.sh
+    echo "export CONDUCTOR_GITHUB_USER=$CONDUCTOR_GITHUB_USER" >>~/.conductor/env.sh
     echo
   fi
 
@@ -267,14 +290,14 @@ function setup_env {
     read token
     CONDUCTOR_GITHUB_TOKEN=$token
 
-    echo "export CONDUCTOR_GITHUB_TOKEN=$CONDUCTOR_GITHUB_TOKEN" >> ~/.conductor/env.sh
+    echo "export CONDUCTOR_GITHUB_TOKEN=$CONDUCTOR_GITHUB_TOKEN" >>~/.conductor/env.sh
     echo
   fi
 
   if [ -z "$CONDUCTOR_VERSION" ]; then
     echo "Setting CONDUCTOR_VERSION=${CONDUCTOR_VERSION}..."
-    CONDUCTOR_VERSION="v0.4.1"
-    echo "export CONDUCTOR_VERSION=$CONDUCTOR_VERSION" >> ~/.conductor/env.sh
+    CONDUCTOR_VERSION="v0.4.2"
+    echo "export CONDUCTOR_VERSION=$CONDUCTOR_VERSION" >>~/.conductor/env.sh
     echo
   fi
 
@@ -284,7 +307,6 @@ function setup_env {
   env | grep "CONDUCTOR"
   echo
 }
-
 
 function install_docker_conductor {
   source ~/.conductor/env.sh

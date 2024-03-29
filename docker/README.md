@@ -33,7 +33,7 @@ The install script expects the following environment variables to be set for you
 export CONDUCTOR_GITHUB_USER="bobby@example.com"
 export CONDUCTOR_GITHUB_TOKEN=gh_token
 export CONDUCTOR_OPENAI_API_KEY=oai_token
-export CONDUCTOR_VERSION=0.4.1
+export CONDUCTOR_VERSION=0.4.2
 export CONDUCTOR_SCRIPTS_VERSION=main
 ```
 
