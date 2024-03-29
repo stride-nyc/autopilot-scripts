@@ -3,7 +3,7 @@
 # Fail immediately if any errors occur
 set -e
 
-CONDUCTOR_USAGE_URL="https://forms.gle/DqyVwMYEnmD4Y8bQ7"
+CONDUCTOR_USAGE_URL="https://forms.gle/nZ2Erw7Cykfqim2Z9"
 REPORT_NAME=conductor-report-$(whoami)-$(date +%F_%H-%M-%S)
 REPORT_PATH=~/tmp/${REPORT_NAME}
 REPORT_ZIP=~/tmp/${REPORT_NAME}.zip
